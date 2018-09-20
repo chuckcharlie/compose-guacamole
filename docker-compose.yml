@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   db:
@@ -16,11 +16,11 @@ services:
 
   guacd:
     hostname: guacd
-    image: guacamole/guacd:0.9.12-incubating
+    image: guacamole/guacd:0.9.14
     restart: always
 
   guacamole:
-    image: guacamole/guacamole:0.9.12-incubating
+    image: guacamole/guacamole:0.9.14
     restart: always
     ports:
       - 8080:8080
