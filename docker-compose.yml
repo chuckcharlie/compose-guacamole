@@ -5,7 +5,7 @@ services:
     hostname: db
     build:
       context: .
-    restart: always
+    restart: unless-stopped
     volumes:
       - data:/var/lib/mysql
     environment:
@@ -16,12 +16,12 @@ services:
 
   guacd:
     hostname: guacd
-    image: guacamole/guacd:0.9.14
-    restart: always
+    image: guacamole/guacd:1.0.0
+    restart: unless-stopped
 
   guacamole:
-    image: guacamole/guacamole:0.9.14
-    restart: always
+    image: guacamole/guacamole:1.0.0
+    restart: unless-stopped
     ports:
       - 8080:8080
     links:
